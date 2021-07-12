@@ -4,6 +4,9 @@
   "author": "Luke Harris <6074660+luk707@users.noreply.github.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "files": [
+    "/lib"
+  ],
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
