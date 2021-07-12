@@ -25,7 +25,7 @@ const result = Funxion.exec(add, { a: 2, b: 3 });
 Pass a key value context that can be accessed in your expressions:
 
 ```ts
-const [example] = Funxion.parse("foo * 5");
+const example = Funxion.parse("foo * 5");
 Funxion.exec(example, { foo: 2 });
 // => 10
 ```
