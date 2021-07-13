@@ -183,7 +183,7 @@ describe("Funxion.exec", () => {
           tokens: [
             { type: "ident", value: "foo" },
             { type: "op_mul", value: "*" },
-            { type: "string", value: "5" },
+            { type: "number", value: 5 },
           ],
           vars: [],
         },
