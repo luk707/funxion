@@ -252,7 +252,7 @@ namespace Funxion {
     functions: Record<string, (...params: any[]) => any> = {}
   ): any => {
     let program = tokens;
-    while (program.length > 1) {
+    do {
       let couldReduce = false;
       for (const node of grammar) {
         let pointerLen = node.match.length;
@@ -294,7 +294,7 @@ namespace Funxion {
       if (!couldReduce) {
         throw "Invalid expression";
       }
-    }
+    } while (program.length > 1);
     if (!["number", "bool", "string"].includes(program[0].type)) {
       throw "Something went wrong!";
     }

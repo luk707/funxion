@@ -191,4 +191,16 @@ describe("Funxion.exec", () => {
       )
     ).toThrow("Invalid expression");
   });
+
+  it("handles single token expression which needs transforming to resolve", () => {
+    expect(
+      Funxion.exec(
+        {
+          tokens: [{ type: "ident", value: "foo" }],
+          vars: [],
+        },
+        { foo: 1 }
+      )
+    ).toEqual(1);
+  });
 });
