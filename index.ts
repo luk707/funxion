@@ -253,6 +253,7 @@ namespace Funxion {
   ): any => {
     let program = tokens;
     while (program.length > 1) {
+      let couldReduce = false;
       for (const node of grammar) {
         let pointerLen = node.match.length;
         let pointer = 0;
@@ -270,6 +271,7 @@ namespace Funxion {
             }
           }
           if (match) {
+            couldReduce = true;
             const newTokens = node.transform(
               program.slice(pointer, pointer + pointerLen),
               context,
@@ -288,6 +290,9 @@ namespace Funxion {
         if (match) {
           break;
         }
+      }
+      if (!couldReduce) {
+        throw "Invalid expression";
       }
     }
     if (!["number", "bool", "string"].includes(program[0].type)) {

@@ -175,4 +175,20 @@ describe("Funxion.exec", () => {
       )
     ).toEqual(2);
   });
+
+  it("does not crash with invalid token sequence", () => {
+    expect(() =>
+      Funxion.exec(
+        {
+          tokens: [
+            { type: "ident", value: "foo" },
+            { type: "op_mul", value: "*" },
+            { type: "string", value: "5" },
+          ],
+          vars: [],
+        },
+        { foo: "hi" }
+      )
+    ).toThrow("Invalid expression");
+  });
 });
