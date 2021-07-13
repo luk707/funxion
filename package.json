@@ -1,6 +1,6 @@
 {
   "name": "funxion",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Luke Harris <6074660+luk707@users.noreply.github.com>",
   "license": "MIT",
   "main": "lib/index.js",
